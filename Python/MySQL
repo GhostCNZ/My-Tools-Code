@@ -1,0 +1,31 @@
+import pymysql
+
+
+'''
+实例化对象：
+    con = ConnectMysql()
+执行SQL操作：
+    con.query(input('请输入SQL语句：'))
+'''
+
+class ConnectMysql:
+    def __init__(self):
+        self.content = pymysql.Connect(
+            host='127.0.0.1',  # mysql的主机ip
+            port=3306,  # 端口
+            user='****',  # 用户名
+            passwd='*****',  # 数据库密码
+            db='******',  # 数据库名
+            charset='utf8',  # 字符集
+        )
+        self.cursor = self.content.cursor()
+
+    def query(self, sql):
+        self.cursor.execute(sql)
+        return self.cursor.fetchall()[0][0]
+
+    def end(self):
+        self.content.close()
+        print('数据库断开成功！')
+
+
