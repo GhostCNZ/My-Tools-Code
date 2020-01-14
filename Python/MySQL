@@ -28,4 +28,3 @@ class ConnectMysql:
         self.content.close()
         print('数据库断开成功！')
 
-
