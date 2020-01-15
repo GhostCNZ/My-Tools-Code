@@ -1,0 +1,8 @@
+class ConnectMongo:
+    def __init__(self):
+        self.content = pymongo.MongoClient("mongodb://IP:端口/")
+        self.db=self.content.库名
+        self.db.authenticate('用户名','密码')
+    def end(self):
+        self.content.close()
+        print('数据库断开成功！')
