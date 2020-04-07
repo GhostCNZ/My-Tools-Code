@@ -1,0 +1,12 @@
+使用方法：
+先导入类Phone，实例化后调用find方法得到返回值。
+
+eg:
+
+from phone import Phone
+
+# 实例化
+p=Phone()
+print(p.find(18888888888))
+
+
